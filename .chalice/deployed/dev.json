@@ -1,0 +1,40 @@
+{
+  "resources": [
+    {
+      "name": "handle_object_created_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::163305015547:role/covid-dev-handle_object_created",
+      "role_name": "covid-dev-handle_object_created"
+    },
+    {
+      "name": "handle_object_created",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-west-2:163305015547:function:covid-dev-handle_object_created"
+    },
+    {
+      "name": "handle_object_created-s3event",
+      "resource_type": "s3_event",
+      "bucket": "trifacta-covid-trifactabucket-q1itzd5kh96",
+      "lambda_arn": "arn:aws:lambda:us-west-2:163305015547:function:covid-dev-handle_object_created"
+    },
+    {
+      "name": "api_handler_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::163305015547:role/covid-dev-api_handler",
+      "role_name": "covid-dev-api_handler"
+    },
+    {
+      "name": "api_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-west-2:163305015547:function:covid-dev"
+    },
+    {
+      "name": "rest_api",
+      "resource_type": "rest_api",
+      "rest_api_id": "8hw48j1041",
+      "rest_api_url": "https://8hw48j1041.execute-api.us-west-2.amazonaws.com/api/"
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}
