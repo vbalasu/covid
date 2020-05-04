@@ -8,7 +8,7 @@ def index():
 
 @app.on_s3_event(bucket='trifacta-covid-trifactabucket-q1itzd5kh96', events=['s3:ObjectCreated:*'])
 def handle_object_created(event):
-    target_bucket = 'aws-trifacta-covid-trifactabucket-q1itzd5kh96'
+    target_bucket = 'from-aws-trifacta-covid-trifactabucket-q1itzd5kh96'
     print('s3 to gcs', event.bucket, target_bucket, event.key)
     cross_cloud.s3_to_gcs(event.bucket, target_bucket, event.key)
 
@@ -17,8 +17,8 @@ def handle_object_created(event):
 @app.route('/gcs_object_created', methods=['POST'])
 def gcs_object_created():
     key = app.current_request.json_body['key']
-    print('covid_data_raw', 'gcs-covid-data-raw', key)
-    cross_cloud.gcs_to_s3('covid_data_raw', 'gcs-covid-data-raw', key)
+    print('covid_data_raw', 'from-gcs-covid-data-raw', key)
+    cross_cloud.gcs_to_s3('covid_data_raw', 'from-gcs-covid-data-raw', key)
     return app.current_request.json_body
 
 # The view function above will return {"hello": "world"}
