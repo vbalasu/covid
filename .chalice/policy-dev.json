@@ -14,7 +14,8 @@
                 "arn:aws:s3:::trifacta-covid-trifactabucket-q1itzd5kh96/*",
                 "arn:aws:s3:::trifacta-covid-trifactabucket-q1itzd5kh96",
                 "arn:aws:s3:::gcs-covid-data-raw/*",
-                "arn:aws:s3:::gcs-covid-data-raw"
+                "arn:aws:s3:::gcs-covid-data-raw",
+                "arn:aws:s3:::*aws-data-exchange*"
             ]
         },
         {
@@ -28,7 +29,10 @@
                 "s3:ListAccessPoints",
                 "s3:ListJobs",
                 "s3:CreateJob",
-                "s3:HeadBucket"
+                "s3:HeadBucket",
+                "dataexchange:*",
+                "aws-marketplace:*",
+                "sqs:*"
             ],
             "Resource": "*"
         },

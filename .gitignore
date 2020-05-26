@@ -2,3 +2,4 @@
 .chalice/venv/
 chalicelib/covid19-sales-engineering-1379-1af154282a84.json
 __pycache__/
+.ipynb_checkpoints/
